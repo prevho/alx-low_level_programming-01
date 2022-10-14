@@ -11,7 +11,7 @@ int main(void)
 
 	for (i = 0; a < 10; a++)
 		putchar('0' + a);
-	putchar('/n');
+	putchar('\n');
 
 	return (0);
 }
