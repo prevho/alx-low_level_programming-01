@@ -11,7 +11,7 @@ int main(void)
 	int i;
 	char putty[] = "_putchar";
 
-	for (i = 0; i < strlen(putty); i++)
+	for (i = 0; i < sizeof(putty) / sizeof(putty[0]); i++)
 	{
 		_putchar(putty[i]);
 	}
