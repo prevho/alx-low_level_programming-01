@@ -16,6 +16,4 @@ int main(void)
 		_putchar(putty[i]);
 	}
 	_putchar('\n');
-
-	return (0);
 }
