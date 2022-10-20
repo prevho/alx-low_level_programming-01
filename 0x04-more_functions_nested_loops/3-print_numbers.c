@@ -2,8 +2,6 @@
 
 /**
  * print_numbers - Prints the digit
- *
- *
  * Return: last digit.
  */
 
