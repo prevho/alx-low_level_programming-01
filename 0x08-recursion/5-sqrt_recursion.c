@@ -1,43 +1,36 @@
-#include "main.h"
-
-int find_sqrt(int num, int root);
-int _sqrt_recursion(int n);
-
+#include "holberton.h"
 /**
- * find_sqrt - Finds the natural square root of an inputted number.
- * @num: The number to find the square root of.
- * @root: The root to be tested.
- *
- * Return: If the number has a natural square root - the square root.
- *         If the number does not have a natural square root - -1.
+ * helper - helps decide if i'm right
+ * @i: integer to guess
+ * @n: integer to get root of
+ * Return: value of root
  */
-int find_sqrt(int num, int root)
+int helper(int i, int n)
 {
-	if ((root * root) == num)
-		return (root);
+	int j;
 
-	if (root == num / 2)
-		return (-1);
-
-	return (find_sqrt(num, root + 1));
+	if (i * i != n)
+	{
+		if (i > n)
+		{
+			return (-1);
+		}
+		j = helper(i + 1, n);
+		return (j + 1);
+	}
+	return (0);
 }
-
 /**
- * _sqrt_recursion - Returns the natural square root of a number.
- * @n: The number to return the square root of.
- *
- * Return: If n has a natural square root - the natural square root of n.
- *         If n does not have a natural square root - -1.
+ * _sqrt_recursion - returns square root
+ * @n: integer to return
+ * Return: returns int of squareroot
  */
 int _sqrt_recursion(int n)
 {
-	int root = 0;
+	int i = 0;
 
-	if (n < 0)
+	if (helper(i, n) == n && n != 1)
 		return (-1);
+	return (helper(i, n));
 
-	if (n == 1)
-		return (1);
-
-	return (find_sqrt(n, root));
-
+}
